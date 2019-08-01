@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
     else
       session[:username] = params[:username]
       redirect_to secret_path
+    end
   end
 
   def destroy
