@@ -3,16 +3,16 @@ class SessionsController < ApplicationController
   end
 
   def create
-    if !params[:username].present?
-      session[:username] = nil
+    if !params[:name].present?
+      session[:name] = nil
       redirect_to '/login'
     else
-      session[:username] = params[:username]
+      session[:name] = params[:name]
       redirect_to secret_path
     end
   end
 
   def destroy
-    session.destroy :username
+    session.destroy :name
   end
 end
